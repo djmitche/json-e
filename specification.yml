@@ -3058,6 +3058,11 @@ context: {tt: true, ff: false}
 template: {$eval: 'ff || ff'}
 result: false
 ---
+title: 'or operator short-circuits'
+context: {tt: true, ff: false}
+template: {$eval: 'tt || nosuchvariable'}
+result: true
+---
 title: 'and operator (1)'
 context: {tt: true, ff: false}
 template: {$eval: 'tt && tt'}
@@ -3076,6 +3081,11 @@ result: false
 title: 'and operator (4)'
 context: {tt: true, ff: false}
 template: {$eval: 'ff && ff'}
+result: false
+---
+title: 'and operator short circuits'
+context: {tt: true, ff: false}
+template: {$eval: 'ff && nosuchvariable'}
 result: false
 ---
 title: 'and operator with not operator'
